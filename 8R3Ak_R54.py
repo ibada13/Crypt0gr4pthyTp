@@ -56,7 +56,7 @@ def main(n: int):
     progress_thread.join()
 
 if __name__ == "__main__":
-    s = "   "  
+    s = "6533333333333333"  
     n = int(s)
     ft = time.time()
     main(n)
