@@ -1,5 +1,5 @@
 import random 
-def pow(base, exponent, mod=None):
+def pow(base:int, exponent:int, mod:int|None =None)->int:
     if mod is None:
         result = 1
         while exponent > 0:
@@ -20,7 +20,7 @@ def pow(base, exponent, mod=None):
     
 
 
-def egcd(a, b):
+def egcd(a:int, b:int)->int:
     if a == 0:
         return (b, 0, 1)
     g, y, x = egcd(b%a,a)
@@ -28,15 +28,10 @@ def egcd(a, b):
 
 
 
-def modinv(a, m):
-    g, x, y = egcd(a, m)
-    if g != 1:
-        raise Exception('No modular inverse')
-    return x%m
 
 
 
-def check_prime(p):
+def check_prime(p : int)->int:
     for i in range(2 , p //2):
         if (p % i == 0 ):
             return False
@@ -52,7 +47,7 @@ def get_prime(a:int , b:int )->int:
     return p
 
 
-def gcd(a, b):
+def gcd(a:int, b:int)->int:
     while b:
         a, b = b, a % b
     return a
@@ -64,7 +59,7 @@ def coprime_with(a:int , b:int )->bool:
 
 
 
-def getGenrator(p ):
+def getGenrator(p :int)->int:
     g = random.randint( 1 ,p)
     while coprime_with( g, p) ==False :
         g = random.randint( 1 ,p)
@@ -73,7 +68,7 @@ def getGenrator(p ):
 
 
 
-def expo_iter(base,exp):
+def expo_iter(base:int,exp:int)->int:
     res = 1 
     while(exp != 0 ):
         res *=base
@@ -82,7 +77,7 @@ def expo_iter(base,exp):
 
 
 
-def mod_exp(base , exp , mod):
+def mod_exp(base:int , exp:int , mod:int)->int:
     return expo_recer(base,exp )% mod
 
 
@@ -97,30 +92,22 @@ def mod_exp(base , exp , mod):
 #     if x1 < 0:
 #         x1 += m0
 #     return x1 if m == 1 else None
-def egcd(a, b):
-    if a == 0:
-        return (b, 0, 1)
-    g, y, x = egcd(b%a,a)
-    return (g, x - (b//a) * y, y)
+
     
-def modinv(a, m):
+def modinv(a:int, m:int)->int:
     g, x, y = egcd(a, m)
     if g != 1:
         raise Exception('No modular inverse')
     return x%m
 
-def gcd(a, b):
-    while b:
-        a, b = b, a % b
-    return a
 
 
-def lcm(a, b):
+def lcm(a:int, b:int)->int:
     return abs(a * b) // gcd(a, b)
 
 
 
-def expo_recer(base , exp ):
+def expo_recer(base:int , exp:int )->int:
     if(exp ==0):
         return 1
 
@@ -128,7 +115,7 @@ def expo_recer(base , exp ):
         return base*expo_recer(base ,exp-1 )
     
 
-def pow1(base , exp , mod  ):
+def pow1(base:int , exp:int , mod :int )->int:
     
     x = base 
     y = exp 
