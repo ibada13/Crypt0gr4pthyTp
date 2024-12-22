@@ -26,9 +26,9 @@ print("p value : " , p)
 
 g = getGenrator( p )
 print("g value : " , g)
-m = numinput("enter the value of m : ")
-k = numinput("enter the k value : ")
-secret_key = numinput("enter the s value : ")
+m = intput("enter the value of m : ")
+k = intput("enter the k value : ")
+secret_key = intput("enter the s value : ")
 
 
 A = pow(g, secret_key , p)

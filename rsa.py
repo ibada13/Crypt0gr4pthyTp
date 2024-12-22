@@ -23,11 +23,11 @@ from lib.inputlib import *
 #     print("time to finish excuting : " , st-ft)
 #     return pow(m , e, n)
 
-m = numinput("inter m : ")
-p = numinput("inter p : ")
-q = numinput("inter q : ")
-n = numinput("inter n : ")
-e = numinput("inter e : ")
+m = intput("inter m : ")
+p = intput("inter p : ")
+q = intput("inter q : ")
+n = intput("inter n : ")
+e = intput("inter e : ")
 phi =  (p-1)*(q-1)
 if(gcd(n,phi)!= 1 ): 
     raise Exception("n is coprime to p !!!")
