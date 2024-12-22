@@ -1,7 +1,7 @@
 from typing import Any
-def numinput(prompt:Any)->float|int :
+def numinput(prompt:Any)->int :
     try:
-        return float(input(prompt))
+        return int(input(prompt))
     except ValueError:
         print("Input must be a valid number." )
         return numinput(prompt)
